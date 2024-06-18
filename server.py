@@ -1,11 +1,13 @@
 import json
 import math
 import random
-import Flask
-from Flask import Flask, url_for
-from Flask import render_template
-from Flask import Response, request, jsonify
+from flask import Flask, render_template, Response, request, jsonify
+
 app = Flask(__name__)
+
+
+
+
 
 # list of descriptions for each step
 
