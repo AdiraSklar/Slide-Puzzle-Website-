@@ -9,13 +9,10 @@
     <link rel="icon" href="data:,">
 </head>
 
-
-</head>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-
-    <h1 class=" white text-center mb-4 center">Quiz Results</h1>
+            <h1 class="white text-center mb-4 center">Quiz Results</h1>
         </div>
     </div>
 
@@ -25,14 +22,14 @@
                 <div class="card Q-card">
                     <div class="card-body">
                         <h5 class="card-title">Question 1</h5>
-                        <span> <i class="card-text fa-regular fa-clock fa-flip-horizontal fa-sm"></i></span>
-                            <span class="card-text">{{ time[0] }} seconds</p></span>
-                        
+                        <span><i class="card-text fa-regular fa-clock fa-flip-horizontal fa-sm"></i></span>
+                        <span class="card-text">{{ time[0] }} seconds</span>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="container-fluid check_container">
                                     {% if quiz_results[0] == [True] %}
-                                        <div class="passed-icon"><i class=" stars_icon fa-solid fa-star fa-beat"></i></div>
+                                        <div class="passed-icon"><i class="stars_icon fa-solid fa-star fa-beat"></i></div>
                                     {% else %}
                                         <div class="failed-icon"><i class="fa-regular fa-star"></i></div>
                                     {% endif %}
@@ -43,21 +40,20 @@
                 </div>
             </div>
         </div>
-         
-    
+
         <div class="col-md-4">
             <div class="mt-4 results center">
                 <div class="card Q-card">
                     <div class="card-body">
                         <h5 class="card-title">Question 2</h5>
-                        <span> <i class="card-text fa-regular fa-clock fa-flip-horizontal fa-sm"></i></span>
-                            <span class="card-text">{{ time[1] }} seconds</p></span>
-                        
+                        <span><i class="card-text fa-regular fa-clock fa-flip-horizontal fa-sm"></i></span>
+                        <span class="card-text">{{ time[1] }} seconds</span>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="container-fluid check_container">
                                     {% if quiz_results[1] == [True] %}
-                                        <div class="passed-icon"><i class=" stars_icon fa-solid fa-star fa-beat"></i></div>
+                                        <div class="passed-icon"><i class="stars_icon fa-solid fa-star fa-beat"></i></div>
                                     {% else %}
                                         <div class="failed-icon"><i class="fa-regular fa-star"></i></div>
                                     {% endif %}
@@ -68,46 +64,38 @@
                 </div>
             </div>
         </div>
-     
-        
-            <div class="col-md-4">
-                <div class="mt-4 results center">
-                    <div class="card Q-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Question 3</h5>
-                            <span> <i class="card-text fa-regular fa-clock fa-flip-horizontal fa-sm"></i></span>
-                                <span class="card-text">{{ time[2] }} seconds</p></span>
-                            
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="container-fluid check_container">
-                                        {% if quiz_results[2] == [True] %}
-                                            <div class="passed-icon"><i class=" stars_icon fa-solid fa-star fa-beat"></i></div>
-                                        {% else %}
-                                            <div class="failed-icon"><i class="fa-regular fa-star"></i></div>
-                                        {% endif %}
-                                    </div>
+
+        <div class="col-md-4">
+            <div class="mt-4 results center">
+                <div class="card Q-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Question 3</h5>
+                        <span><i class="card-text fa-regular fa-clock fa-flip-horizontal fa-sm"></i></span>
+                        <span class="card-text">{{ time[2] }} seconds</span>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="container-fluid check_container">
+                                    {% if quiz_results[2] == [True] %}
+                                        <div class="passed-icon"><i class="stars_icon fa-solid fa-star fa-beat"></i></div>
+                                    {% else %}
+                                        <div class="failed-icon"><i class="fa-regular fa-star"></i></div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-        
-          
-</div>
-    <div class="row">
 
-        
-    </div>
-    
-</div>
-<div class="row">
-    <div class="col-md-12 text-center">
-        <button id="retakeQuiz" class="styled-button">Retake quiz</button>
-        <button id="learnAgain" class="styled-button">Repeat Learn</button>
-        <button id="solvePuzzle" class="styled-button">Practice Puzzles</button>
+    <div class="row mt-4">
+        <div class="col-md-12 text-center">
+            <button id="retakeQuiz" class="styled-button">Retake quiz</button>
+            <button id="learnAgain" class="styled-button">Repeat Learn</button>
+            <button id="solvePuzzle" class="styled-button">Practice Puzzles</button>
+        </div>
     </div>
 </div>
 
@@ -115,21 +103,25 @@
     function retakeQuizBut() {
         // Click event handler for the retake quiz button
         $("#retakeQuiz").click(function () {
-        window.location.href = "/quiz/1";
+            window.location.href = "/quiz/1";
         });
     }
+
     function solvePuzzleBut() {
-        // Click event handler for the retake quiz button
+        // Click event handler for the practice puzzles button
         $("#solvePuzzle").click(function () {
-        window.location.href = "/practice";
+            window.location.href = "/practice";
         });
     }
+
     function relearn() {
-        // Click event handler for the retake quiz button
+        // Click event handler for the repeat learn button
         $("#learnAgain").click(function () {
-        window.location.href = "/row";
+            window.location.href = "/row";
         });
     }
+
+    // Attach click handlers
     retakeQuizBut();
     solvePuzzleBut();
     relearn();

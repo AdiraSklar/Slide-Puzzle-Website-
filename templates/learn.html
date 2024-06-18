@@ -14,70 +14,61 @@
 </head>
 
 <div class="row">
-            <div class="col-md-4" >
-                <div>
-                    <div class="row">
-                    <div class="card-body intruction-card  color">
-                        <h2> <strong> <span class="stepcol">Step {{id}} </span></strong> </h2>
-                        <h3 class="stepcol2" id="description"> <span class="stepcol">{{ description }}</span></h3>
-                    </div>
-                </div>
-                `  
-                    <button id="whyButton" class="whyButton styled-button mt-3">Why? &or; </button>
-                        <div id="whyTho" class="strategy-container">
-                        <p><span id="WHY">{{ why_it_works }}</span></p>
-                        </div>
-                    
+    <div class="col-md-4">
+        <div>
+            <div class="row">
+                <div class="card-body intruction-card color">
+                    <h2><strong><span class="stepcol">Step {{ id }}</span></strong></h2>
+                    <h3 class="stepcol2" id="description"><span class="stepcol">{{ description }}</span></h3>
                 </div>
             </div>
-
-             <div class="col-md-4 text-center justify-content-center align-items-center">
-                <div class="container top-padding">
-
-                <div id="source" class=" pad-container"> </div>
-                <div class="row">
-                    <div class="card-body click-card2 "  id="success-card">
-                        <div class="row">
-                            <span class="stepcol green" id="success" data-step = '{{id}}'></span>
-                        </div>
-                    
-                </div>
-                    <div class="row">
-                        <div class="card-body click-card">
-                            <div class="row">
-                                <span class="stepcol" id="click ">Click the squares to move</span>
-                                <span><i class=" stepcol cursor fa-solid fa-arrow-pointer fa-beat fa-md"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button id="backButton" class="styled-button mt-3">Back</button>
-                <button id="quizButton" class="styled-button mt-3">Quiz yourself</button>
-                <button id="nextButton" class="pulse-button styled-button mt-3">Next</button>
-          </div>
+            <button id="whyButton" class="whyButton styled-button mt-3">Why? &or;</button>
+            <div id="whyTho" class="strategy-container">
+                <p><span id="WHY">{{ why_it_works }}</span></p>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-4 ">
-        <div class="container">
-                <button id="instructionsButton" class="styled-button but-pad">
-                    <span>Show me How </span>
-                    <span id="bold">&or;</span> </button>
-                    <div id="instructions" class="instructions-container">
-                        <p> There are <strong>many</strong> different ways you can move the tiles to achieve your
-                        desired result. This video might not be your exact board, but it could inspire movement!</p>
-                        
-                        <video width="320" height="240" controls>
-                            <source src="{{ url_for('static', filename=video) }}" type="video/mp4">
-                            type="video/mp4">
-                        </video> 
+    <div class="col-md-4 text-center justify-content-center align-items-center">
+        <div class="container top-padding">
+            <div id="source" class="pad-container"></div>
+            <div class="row">
+                <div class="card-body click-card2" id="success-card">
+                    <div class="row">
+                        <span class="stepcol green" id="success" data-step='{{ id }}'></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-body click-card">
+                        <div class="row">
+                            <span class="stepcol" id="click">Click the squares to move</span>
+                            <span><i class="stepcol cursor fa-solid fa-arrow-pointer fa-beat fa-md"></i></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button id="backButton" class="styled-button mt-3">Back</button>
+            <button id="quizButton" class="styled-button mt-3">Quiz yourself</button>
+            <button id="nextButton" class="pulse-button styled-button mt-3">Next</button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="container">
+            <button id="instructionsButton" class="styled-button but-pad">
+                <span>Show me How </span>
+                <span id="bold">&or;</span>
+            </button>
+            <div id="instructions" class="instructions-container">
+                <p> There are <strong>many</strong> different ways you can move the tiles to achieve your desired result. This video might not be your exact board, but it could inspire movement!</p>
+                
+                <video width="320" height="240" controls>
+                    <source src="{{ url_for('static', filename=video) }}" type="video/mp4">
+                </video> 
             </div>
         </div>
     </div>
 </div>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {

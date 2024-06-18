@@ -23,13 +23,13 @@
 
     <div class="col-md-4 text-center justify-content-center align-items-center">
         <div class="container ">
-        <div id="success" data-step = '{{id}}'></div>
+        <div id="success" data-step='{{ id }}'></div>
         <div id="source"> </div>
         <div class="row">
             <div class="card-body click-card">
                 <div class="row">
                     <span class="stepcol" id="click">Click the squares to move</span>
-                    <span><i class=" stepcol cursor fa-solid fa-arrow-pointer fa-beat fa-xl"></i></span>
+                    <span><i class="stepcol cursor fa-solid fa-arrow-pointer fa-beat fa-xl"></i></span>
                 </div>
             </div>
         </div>
@@ -45,44 +45,43 @@
 </div>
 
 <script>
-
-    $("#shuffle").click( function(){
-        window.location.reload()
-    })
-
-    $("#learnButton").click( function(){
-        window.location.href = "/row"
-    })
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Get the description element
-    var descriptionElement = document.getElementById('description');
-
-    // Get the text content of the description
-    var descriptionText = descriptionElement.textContent;
-
-    // Split the description text into an array of characters
-    var characters = descriptionText.split('');
-
-    // Create a new HTML string with each number wrapped in a span element with a class
-    var styledDescription = '';
-    characters.forEach(function(char) {
-        if (!isNaN(char)) { // Check if the character is a number
-            // If it's a number, wrap it in a span element with a class for styling
-            styledDescription += '<span class="number">' + char + '</span>';
-        } else {
-            // If it's not a number, just add it to the string as is
-            styledDescription += char;
-        }
+    $("#shuffle").click(function() {
+        window.location.reload();
     });
 
-    // Set the innerHTML of the description element to the styled description
-    descriptionElement.innerHTML = styledDescription;
-});
+    $("#learnButton").click(function() {
+        window.location.href = "/row";
+    });
 
-let lay = '{{ layout | tojson | safe }}';
-let grid_use = JSON.parse(lay);
-let sourceDiv = document.getElementById('source');
-sourceDiv.appendChild(buildPuzzle(grid_use));
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Get the description element
+        var descriptionElement = document.getElementById('description');
 
+        // Get the text content of the description
+        var descriptionText = descriptionElement.textContent;
+
+        // Split the description text into an array of characters
+        var characters = descriptionText.split('');
+
+        // Create a new HTML string with each number wrapped in a span element with a class
+        var styledDescription = '';
+        characters.forEach(function(char) {
+            if (!isNaN(char)) { // Check if the character is a number
+                // If it's a number, wrap it in a span element with a class for styling
+                styledDescription += '<span class="number">' + char + '</span>';
+            } else {
+                // If it's not a number, just add it to the string as is
+                styledDescription += char;
+            }
+        });
+
+        // Set the innerHTML of the description element to the styled description
+        descriptionElement.innerHTML = styledDescription;
+    });
+
+    let lay = '{{ layout | tojson | safe }}';
+    let grid_use = JSON.parse(lay);
+    let sourceDiv = document.getElementById('source');
+    sourceDiv.appendChild(buildPuzzle(grid_use));
 </script>
 {% endblock %}

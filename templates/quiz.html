@@ -6,35 +6,31 @@
     <script type="text/javascript" src="{{ url_for('static', filename='quiz.js') }}"></script>
 </head>
 
-
-
 <div class="row">
-    
     <div class="col-md-4 mt-4">
         <div class="card-body intruction-card">
-        <h2 class="stepcol"> <strong>Question {{question_num}} </strong></h2>
-        <h3><span class="stepcol2 justify">{{question}}</span></h3>
+            <h2 class="stepcol"> <strong>Question {{ question_num }} </strong></h2>
+            <h3><span class="stepcol2 justify">{{ question }}</span></h3>
+        </div>
     </div>
-    </div>
-    
+
     <div class="col-md-4 mt-4 text-center justify-content-center align-items-center">
         <br><br><br><br>
-        <div id="success" data-step = '{{question_num}}'></div>
+        <div id="success" data-step='{{ question_num }}'></div>
         <div id="source" data-mode="quiz"></div>
 
         <button id="resultsButton" class="styled-button mt-3">Results</button>
         <button id="nextButton" class="styled-button mt-3">Next</button>
         
-      
-            <div class="card-body timer-card">
-                <span><i id="clock" class=" white  fa-regular fa-clock "></i></span>
-                <span class="white" id="timer">00:00</span>
-            </div>
-       
+        <div class="card-body timer-card">
+            <span><i id="clock" class="white fa-regular fa-clock"></i></span>
+            <span class="white" id="timer">00:00</span>
+        </div>
+
         <div class="card-body click-card">
             <div class="row">
-                <span  class="stepcol" id="click">Click the squares to move</span>
-                <span><i class=" stepcol cursor fa-solid fa-arrow-pointer fa-beat fa-xl"></i></span>
+                <span class="stepcol" id="click">Click the squares to move</span>
+                <span><i class="stepcol cursor fa-solid fa-arrow-pointer fa-beat fa-xl"></i></span>
             </div>
         </div>
     </div>
@@ -43,18 +39,16 @@
     </div>
 </div>
 
-
 <script>
-let lay = '{{ layout | tojson | safe }}';
-let grid_use = JSON.parse(lay);
-let sourceDiv = document.getElementById('source');
-sourceDiv.appendChild(buildPuzzle(grid_use));
+    // Replace with your JavaScript logic as needed
+    let lay = '{{ layout | tojson | safe }}';
+    let grid_use = JSON.parse(lay);
+    let sourceDiv = document.getElementById('source');
+    sourceDiv.appendChild(buildPuzzle(grid_use));
 
-$("#resultsButton").click( function(){
-    window.location.href = '/results'
-})
-
-// Handler for view item button
-
+    $("#resultsButton").click(function() {
+        window.location.href = '/results';
+    });
 </script>
+
 {% endblock %}
