@@ -1,0 +1,25 @@
+$(document).ready(function () {
+  showNextButton();
+  clickNextBut();
+
+  //Hide results button until the end
+  $("#resultsButton").hide();
+  showResultsButton();
+
+  function showNextButton() {
+    let currentId = window.location.pathname.split("/").pop();
+    if (currentId == 3 || !checkQuizComplete()) {
+      $("#nextButton").hide();
+    }
+  }
+
+  function clickNextBut() {
+    // Click event handler for the next button
+    let currentId = window.location.pathname.split("/").pop();
+    let nextId = parseInt(currentId) + 1;
+    nextId = nextId <= 3 ? nextId : 3;
+    $("#nextButton").click(function () {
+      window.location.href = "/quiz/" + nextId;
+    });
+  }
+});

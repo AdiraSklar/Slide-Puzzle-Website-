@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="title-container">
+            <h1 class="title">Learn how to Slide Puzzle</h1>
+            <p class="subtitle">In under 10 minutes, you can master the whole strategy</p>
+            <br>
+            <button id="toLearn" class="styled-button">Learn Now</button>
+        </div>
+    </div>
+    <div class="col-md-4" >
+        <div class="pad" id="puzz-home"></div>
+    </div>
+
+<script>
+$("#toLearn").click(function(){
+    window.location.href = '/row';
+});
+
+let visualDiv = document.getElementById('puzz-home');
+let lay_list = '{{ lay_list | tojson | safe }}';
+let lay_use = JSON.parse(lay_list);
+visualDiv.appendChild(buildPuzzList(lay_use));
+
+let sol = '{{ solution | tojson | safe }}';
+let solution = JSON.parse(sol);
+var solve = function(){
+    solveStep(solution);}
+window.onload = solve;
+</script>
+
+{% endblock %}
+
