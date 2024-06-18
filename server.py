@@ -23,7 +23,7 @@ why_it_works = ["We are trying to set up our board for long term success. To com
                 "We are similarly getting our board ready for a simple shuffle. This time, instead of stacking our two numbers, we want to position them side by side (since our goal is the column not row). If we put the 7 in the leftmost middle spot and then 4 right next to it, we will then be able to slide the 7 down and the 4 over. Hence, we call this strategy the Side and Slide! Can you picture it?",
                 "We are similarly getting our board ready for a simple shuffle. This time, instead of stacking our two numbers, we want to position them side by side (since our goal is the column not row). If we put the 7 in the leftmost middle spot and then 4 right next to it, we will then be able to slide the 7 down and the 4 over. Hence, we call this strategy the Side and Slide! Can you picture it?",
                 "Our tiles are all setup! All you have to do now is create an empty space so that the 7 can slide down and the 4 can slide over. Then you've completed your left column!",
-                "filler", "filler"]
+                "Filler", "Filler"]
 
 video = ["images/1.mp4", "images/2.mp4", "images/3.mp4", "images/4.mp4",
          "images/5.mp4", "images/6.mp4", "images/7.mp4", "images/8.mp4"]
